@@ -1,0 +1,187 @@
+API:
+
+1) GET : http://localhost:8080/barber/details/97
+
+Response:
+{
+    "id": 97,
+    "name": "Virat",
+    "address": "Delhi",
+    "phoneNumber": "1234",
+    "experience": "5",
+    "rating": "4",
+    "chargePerSession": "300"
+}
+
+2) GET : http://localhost:8080/barber/details
+
+Response : 
+[
+    {
+        "id": 97,
+        "name": "Virat",
+        "address": "Delhi",
+        "phoneNumber": "1234",
+        "experience": "5",
+        "rating": "4",
+        "chargePerSession": "300"
+    },
+    {
+        "id": 518,
+        "name": "Virat",
+        "address": "Delhi",
+        "phoneNumber": "1234",
+        "experience": "5",
+        "rating": "4",
+        "chargePerSession": "300"
+    }
+]
+
+3) POST : http://localhost:8080/barber/register
+
+Body : 
+{
+	"name":"Virat",
+	"address":"Delhi",
+	"phoneNumber":"1234",
+	"experience":"5",
+	"rating":"4",
+	"chargePerSession":"300"
+}
+
+Response :
+{
+    "id": 681,
+    "name": "Virat",
+    "address": "Delhi",
+    "phoneNumber": "1234",
+    "experience": "5",
+    "rating": "4",
+    "chargePerSession": "300"
+}
+
+4) POST : http://localhost:8080/booking/barber/availability
+
+Body : {
+	"bookingDate":"05/14/2022",
+	"barberId":97,
+	"startTime":"9:30",
+	"endTime":"10:30"
+}
+
+Response : true or false
+
+5) GET : http://localhost:8080/booking/details
+
+Response : 
+[
+    {
+        "id": 33831,
+        "bookingDate": "05/14/2022",
+        "name": "Rahul",
+        "phone": "1234",
+        "barberId": 259,
+        "barberName": "Virat",
+        "startTime": "9:30",
+        "endTime": "10:30",
+        "subject": null,
+        "location": null,
+        "comments": null,
+        "IsBlock": true
+    }
+]
+
+6) POST : http://localhost:8080/booking/create
+Body : 
+{
+	"bookingDate":"05/14/2022",
+	"name":"Rahul",
+	"phone":"1234",
+	"barberId":259,
+	"barberName":"Virat",
+	"startTime":"9:30",
+	"endTime":"10:30"
+}
+
+Response:
+{
+    "id": 33831,
+    "bookingDate": "05/14/2022",
+    "name": "Rahul",
+    "phone": "1234",
+    "barberId": 259,
+    "barberName": "Virat",
+    "startTime": "9:30",
+    "endTime": "10:30",
+    "subject": null,
+    "location": null,
+    "comments": null,
+    "IsBlock": true
+}
+
+7) GET : http://localhost:8080/booking/details/259
+
+Response :
+[
+    {
+        "id": 33831,
+        "bookingDate": "05/14/2022",
+        "name": "Rahul",
+        "phone": "1234",
+        "barberId": 259,
+        "barberName": "Virat",
+        "startTime": "9:30",
+        "endTime": "10:30",
+        "subject": null,
+        "location": null,
+        "comments": null,
+        "IsBlock": true
+
+    {
+        "id": 33832,
+        "bookingDate": "05/14/2022",
+        "name": "Rahul",
+        "phone": "1234",
+        "barberId": 259,
+        "barberName": "Virat",
+        "startTime": "11:30",
+        "endTime": "12:30",
+        "subject": null,
+        "location": null,
+        "comments": null,
+        "IsBlock": true
+    }
+]
+
+8) GET : http://localhost:8080/booking/admin/details
+
+[
+    {
+        "id": 33831,
+        "bookingDate": "05/14/2022",
+        "name": "Rahul",
+        "phone": "1234",
+        "barberId": 259,
+        "barberName": "Virat",
+        "startTime": "9:30",
+        "endTime": "10:30",
+        "subject": null,
+        "location": null,
+        "comments": null,
+        "IsBlock": false
+    },
+    {
+        "id": 84125,
+        "bookingDate": "05/14/2022",
+        "name": "Rahul",
+        "phone": "1234",
+        "barberId": 259,
+        "barberName": "Virat",
+        "startTime": "12:30",
+        "endTime": "1:30",
+        "subject": null,
+        "location": null,
+        "comments": null,
+        "IsBlock": false
+    }
+]
